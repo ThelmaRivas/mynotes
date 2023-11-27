@@ -30,7 +30,15 @@ router.post('/notes', (req, res) => {
       
       newNote.id = uuidv4();
       notes.push(newNote);
-      
+
+      fs.writeFile('./db/db.json', JSON.stringify(notes), (err) => {
+        if (err) {
+          console.error(err);
+          return res.status(500).json({ error: 'Internal Server Error' });
+        }
+  
+        res.json(newNote);
+      });
     });
   });
   
