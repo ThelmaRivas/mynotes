@@ -28,6 +28,8 @@ router.post('/notes', (req, res) => {
       const notes = JSON.parse(data);
       const newNote = req.body;
       
+      newNote.id = uuidv4();
+      notes.push(newNote);
       
     });
   });
