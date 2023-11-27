@@ -16,3 +16,19 @@ router.get('/notes', (req, res) => {
         res.json(notes);
     });
 });
+
+router.post('/notes', (req, res) => {
+    
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).json({ error: 'Internal Server Error' });
+      }
+  
+      const notes = JSON.parse(data);
+      const newNote = req.body;
+      
+      
+    });
+  });
+  
