@@ -5,7 +5,7 @@ const htmlRoutes = require('./routes/html/htmlRoutes');
 const apiRoutes = require('./routes/api/apiRoutes'); 
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
